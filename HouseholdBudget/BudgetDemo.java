@@ -100,6 +100,7 @@ public class BudgetDemo {
             }
         } while (inputs != 0);
         System.out.println("Thank you for using COMP248 Geek's HouseholdBudget application!");
+        user_inputs.close();
 
     }
 
@@ -161,6 +162,7 @@ public class BudgetDemo {
 
             }
         }
+        user_input.close();
     }
 
     // create a method to get householdbudget with same fund total
@@ -195,6 +197,7 @@ public class BudgetDemo {
                     System.out.println("householdBudget " + (i) + " and " + j);
                 }
             }
-        }
+        }  
     }
+
 }

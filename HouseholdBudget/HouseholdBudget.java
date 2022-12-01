@@ -94,7 +94,7 @@ public class HouseholdBudget {
     public String remove_expenses() {
         /* in the assignment it says that it returns false or true but it's more convenient
          to return a string to the user just like the demo you gave we just write less sout statements.*/
-        for (int i = 0; i < expenses.length; i++) {
+        for (int i = 0; i < expenses.length;) {
             if (this.expenses[i] == null)
                 return "Sorry Household has no expenses";
             else {
@@ -106,8 +106,9 @@ public class HouseholdBudget {
                     Scanner input = new Scanner(System.in);
                     System.out.println("(Enter number 0 to " + (this.expenses.length - 1) + "):");
                     int index = input.nextInt();
-                    if (index < 0 || index > this.expenses.length - 1)
+                    if (index < 0 || index > this.expenses.length - 1){
                         return "wrong input";
+                }
                     else {
                         Expense[] copy = new Expense[this.expenses.length - 1];
                         //copy the elements before the index
@@ -154,7 +155,6 @@ public class HouseholdBudget {
                 System.out.println("Due date updated");
 
             }
-
         }
     }
 
@@ -172,6 +172,7 @@ public class HouseholdBudget {
         this.fund.addFunds(loonies, toonies, fiveDollarBill, tenDollarBill, twentyDollarBill);
         //display the total amount of money in the fund
         return "You now have $" + this.fund.fundtotal() + ".0";
+       
     }
 
     // create an equals method for the householdbudget class
@@ -181,6 +182,7 @@ public class HouseholdBudget {
         } else {
             return false;
         }
+      
     }
 
     //create a method to display the household budget
