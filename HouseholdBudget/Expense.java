@@ -145,6 +145,7 @@ public class Expense {
       this.day == Expense2.day &&
       this.month == Expense2.month &&
       this.Name.equals(Expense2.Name)
-    ) return true; else return false;
+    ) return true; 
+    else return false;
   }
 } //end of Expense class
