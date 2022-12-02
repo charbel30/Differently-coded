@@ -1,10 +1,10 @@
 class Expense:
     def __init__(self):
-        self.expense_type = ' '
+        self.expense_type = " "
         self.amount = 0
         self.day = 0
         self.month = 0
-        self.Name = ' '
+        self.Name = " "
 
     def __init__(self, type, amount, day, month, name):
         self.expense_type = type
@@ -68,20 +68,42 @@ class Expense:
 
     def __str__(self):
         if self.day < 10 and self.month < 10:
-            return self.expense_type + ' - $' + str(self.amount) + ' - ' + self.Name + ' - 0' + str(self.day) + '/0' + str(self.month) + '.'
+            return (
+                self.expense_type
+                + " - $"
+                + str(self.amount)
+                + " - "
+                + self.Name
+                + " - 0"
+                + str(self.day)
+                + "/0"
+                + str(self.month)
+                + "."
+            )
         elif self.day < 10 and self.month >= 10:
-            return self.expense_type + ' - $' + str(self.amount) + ' - ' + self.Name + ' - 0' + str(self.day) + '/' + str(self.month) + '.'
+            return (
+                self.expense_type
+                + " - $"
+                + str(self.amount)
+                + " - "
+                + self.Name
+                + " - 0"
+                + str(self.day)
+                + "/"
+                + str(self.month)
+                + "."
+            )
         elif self.day >= 10 and self.month < 10:
-            return self.expense_type + ' - $' + str(self)
-            
+            return self.expense_type + " - $" + str(self)
 
     def equals(self, Expense2):
         if (
-      self.expense_type == Expense2.expense_type and
-      self.amount == Expense2.amount and
-      self.day == Expense2.day and
-      self.month == Expense2.month and
-      self.Name == Expense2.Name
-            ): return True;
-        else: return False;
-            
+            self.expense_type == Expense2.expense_type
+            and self.amount == Expense2.amount
+            and self.day == Expense2.day
+            and self.month == Expense2.month
+            and self.Name == Expense2.Name
+        ):
+            return True
+        else:
+            return False
